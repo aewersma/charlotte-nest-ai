@@ -10,6 +10,8 @@ import { PrioritySlider } from "@/components/PrioritySlider";
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 import { ArrowLeft, Save } from "lucide-react";
 import { toast } from "sonner";
+import logo from "@/assets/safeliving-logo.png";
+import { Footer } from "@/components/Footer";
 
 const Profile = () => {
   const navigate = useNavigate();
@@ -46,18 +48,21 @@ const Profile = () => {
   }
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 py-12 px-4">
-      <div className="max-w-4xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 py-12 px-4 flex flex-col">
+      <div className="max-w-4xl mx-auto flex-grow">
         {/* Header */}
-        <div className="mb-8">
-          <Button variant="ghost" onClick={() => navigate('/dashboard')} className="mb-4">
-            <ArrowLeft className="mr-2 h-4 w-4" />
-            Back to Dashboard
-          </Button>
-          <h1 className="text-3xl font-bold text-foreground">Profile & Settings</h1>
-          <p className="text-muted-foreground mt-2">
-            Update your information to get fresh neighborhood recommendations
-          </p>
+        <div className="mb-8 flex items-center gap-4">
+          <img src={logo} alt="Smart Living" className="w-12 h-12" />
+          <div className="flex-grow">
+            <Button variant="ghost" onClick={() => navigate('/dashboard')} className="mb-2">
+              <ArrowLeft className="mr-2 h-4 w-4" />
+              Back to Dashboard
+            </Button>
+            <h1 className="text-3xl font-bold text-foreground">Profile & Settings</h1>
+            <p className="text-muted-foreground mt-1">
+              Update your information to get fresh neighborhood recommendations
+            </p>
+          </div>
         </div>
 
         <div className="space-y-6">
@@ -273,6 +278,8 @@ const Profile = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };

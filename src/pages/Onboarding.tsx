@@ -9,6 +9,8 @@ import { NumberSelector } from "@/components/NumberSelector";
 import { PrioritySlider } from "@/components/PrioritySlider";
 import { ArrowLeft, ArrowRight, Check } from "lucide-react";
 import { toast } from "sonner";
+import logo from "@/assets/safeliving-logo.png";
+import { Footer } from "@/components/Footer";
 
 interface OnboardingData {
   // Step 1: Account
@@ -105,8 +107,15 @@ const Onboarding = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 py-12 px-4">
-      <div className="max-w-3xl mx-auto">
+    <div className="min-h-screen bg-gradient-to-b from-background to-muted/30 py-12 px-4 flex flex-col">
+      <div className="max-w-3xl mx-auto flex-grow">
+        {/* Logo and Title */}
+        <div className="text-center mb-8">
+          <img src={logo} alt="Smart Living" className="w-40 mx-auto mb-4" />
+          <h1 className="text-3xl font-bold text-foreground mb-2">Welcome to Smart Living</h1>
+          <p className="text-muted-foreground">Let's find your perfect neighborhood match</p>
+        </div>
+        
         {/* Progress Bar */}
         <div className="mb-8">
           <div className="flex justify-between items-center mb-2">
@@ -383,6 +392,8 @@ const Onboarding = () => {
           </div>
         </div>
       </div>
+      
+      <Footer />
     </div>
   );
 };
