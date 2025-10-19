@@ -30,7 +30,7 @@ export const getNeighborhoodRecommendations = async (
   profile: UserProfile
 ): Promise<NeighborhoodRecommendation[]> => {
   try {
-    const prompt = `You are a neighborhood recommendation AI for Charlotte, NC. Based on the following user profile, recommend the top 3 neighborhoods that would be the best fit. For each neighborhood, provide: name, match score (0-100), 3-4 key highlights, median home price, and a brief description.
+    const prompt = `You are a neighborhood recommendation AI. Based on the following user profile, recommend the top 3 neighborhoods that would be the best fit. For each neighborhood, provide: name, match score (0-100), 3-4 key highlights, median home price, and a brief description.
 
 User Profile:
 - Household Size: ${profile.householdSize}
